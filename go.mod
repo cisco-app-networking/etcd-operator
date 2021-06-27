@@ -1,6 +1,6 @@
 module etcd-operator
 
-go 1.15
+go 1.13
 
 replace github.com/coreos/etcd-operator v0.9.4 => ./
 
