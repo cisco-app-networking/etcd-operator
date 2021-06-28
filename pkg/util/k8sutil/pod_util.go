@@ -93,7 +93,9 @@ func applyPodPolicy(clusterName string, pod *v1.Pod, policy *api.PodPolicy) {
 		return
 	}
 
-	pod.Spec.ImagePullSecrets = []v1.LocalObjectReference{{Name: policy.SecretName}}
+	if policy.SecureRegistry {
+		pod.Spec.ImagePullSecrets = []v1.LocalObjectReference{{Name: policy.SecretName}}
+	}
 
 	if policy.Affinity != nil {
 		pod.Spec.Affinity = policy.Affinity

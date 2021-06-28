@@ -163,6 +163,9 @@ type PodPolicy struct {
 	// The default is to not set a cluster domain explicitly.
 	ClusterDomain string `json:"ClusterDomain"`
 
+	// Set to true in case image will be downloaded from a secure container registry location
+	SecureRegistry bool `json:"secureRegistry,omitempty"`
+
 	// SecretName is the secret used for imagePullSecrets field of the pod
 	// It allows downloading of the image from a secure container registry
 	SecretName string `json:"secretName,omitempty"`
