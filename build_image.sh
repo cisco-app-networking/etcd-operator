@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ETCD_OPERATOR_IMAGE=${ETCD_OPERATOR_IMAGE:-'docker.io/appn/etcd-operator:latest'}
+ETCD_OPERATOR_IMAGE=${ETCD_OPERATOR_IMAGE:-'docker.io/appn/coreos-etcd-operator:latest'}
 
 # Install dep as described here https://github.com/golang/dep
 curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
