@@ -7,7 +7,7 @@
 ```bash
 $ ETCD_OPERATOR_IMAGE=containers.cisco.com/appn/etcd-operator:v0.9.5 ./build_image.sh
 ```
-- Make sure the binary in _output/bin/etcd-operator changed (check the modification time)
+- Make sure the binary in *_output/bin/etcd-operator* changed (check the modification time)
 - Push the image 
 ```bash
 $ docker push containers.cisco.com/appn/etcd-operator:v0.9.5 
