@@ -18,7 +18,7 @@ import (
 	"errors"
 	"strings"
 
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -162,6 +162,13 @@ type PodPolicy struct {
 	// '.cluster.local'.
 	// The default is to not set a cluster domain explicitly.
 	ClusterDomain string `json:"ClusterDomain"`
+
+	// Set to true in case image will be downloaded from a secure container registry location
+	SecureRegistry bool `json:"secureRegistry,omitempty"`
+
+	// SecretName is the secret used for imagePullSecrets field of the pod
+	// It allows downloading of the image from a secure container registry
+	SecretName string `json:"secretName,omitempty"`
 }
 
 // TODO: move this to initializer
@@ -194,7 +201,7 @@ func (e *EtcdCluster) SetDefaults() {
 		c.Version = DefaultEtcdVersion
 	}
 
-	c.Version = strings.TrimLeft(c.Version, "v")
+	//c.Version = strings.TrimLeft(c.Version, "v")
 
 	// convert PodPolicy.AntiAffinity to Pod.Affinity.PodAntiAffinity
 	// TODO: Remove this once PodPolicy.AntiAffinity is removed

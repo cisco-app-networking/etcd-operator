@@ -21,7 +21,7 @@ import (
 	api "github.com/coreos/etcd-operator/pkg/apis/etcd/v1beta2"
 	"github.com/coreos/etcd-operator/pkg/util/etcdutil"
 
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 )
 
 const (
@@ -91,6 +91,10 @@ func newEtcdProbe(isSecure bool) *v1.Probe {
 func applyPodPolicy(clusterName string, pod *v1.Pod, policy *api.PodPolicy) {
 	if policy == nil {
 		return
+	}
+
+	if policy.SecureRegistry {
+		pod.Spec.ImagePullSecrets = []v1.LocalObjectReference{{Name: policy.SecretName}}
 	}
 
 	if policy.Affinity != nil {

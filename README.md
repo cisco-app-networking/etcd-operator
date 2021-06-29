@@ -1,5 +1,7 @@
 # etcd operator
 
+## ![WCM etcd-operator release procedure](./WCM_RELEASE.md)
+
 ### Project status: archived
 
 This project is no longer actively developed or maintained. The project exists here for historical reference. If you are interested in the future of the project and taking over stewardship, please contact etcd-dev@googlegroups.com.
