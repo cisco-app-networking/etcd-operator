@@ -12,4 +12,4 @@ $ ETCD_OPERATOR_IMAGE=containers.cisco.com/appn/coreos-etcd-operator:v0.9.5 ./bu
 ```bash
 $ docker push containers.cisco.com/appn/coreos-etcd-operator:v0.9.5
 ```
-- Modify the image [here](https://wwwin-github.cisco.com/adodon/wcm-common/blob/master/.jenkins/Jenkinsfile)  and re-run [this pipeline](https://engci-private-sjc.cisco.com/jenkins/eti-sre/job/AppN/job/wcm-registry-hosting/)
+- Modify the image [here](https://wwwin-github.cisco.com/cisco-app-networking/wcm-common/blob/3rdparty-image-hosting/.jenkins/build-docker.sh#L14)  and re-run [this pipeline](https://engci-private-sjc.cisco.com/jenkins/eti-sre/job/AppN/job/wcm-registry-hosting/job/3rdparty-image-hosting/
